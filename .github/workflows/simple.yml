@@ -20,7 +20,7 @@ jobs:
 
   run-windows-commands:
     runs-on: windows-latest
-    needs: 
+    needs:
       - run-shell-command
     steps:
       - name: show current directory using powershell
