@@ -5,6 +5,7 @@ on: [push]
 jobs:
   run-shell-command:
     runs-on: ubuntu-20.04
+
     steps:
       - name: echo a string
         run: echo "Hello World"
@@ -12,3 +13,8 @@ jobs:
         run: |
           node -v
           npm -v
+      - name: python command
+        shell: python
+        run: |
+          import platform
+          print(platform.processor())
