@@ -5,7 +5,6 @@ on: [push]
 jobs:
   run-shell-command:
     runs-on: ubuntu-20.04
-
     steps:
       - name: echo a string
         run: echo "Hello World"
@@ -18,3 +17,13 @@ jobs:
         run: |
           import platform
           print(platform.processor())
+
+  run-windows-commands:
+    runs-on: windows-latest
+    steps:
+      - name: show current directory using powershell
+        run: Get-Location
+      - name: show current directory using bash
+        shell: bash
+        run: pwd
+        
