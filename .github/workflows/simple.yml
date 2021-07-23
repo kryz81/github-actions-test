@@ -20,10 +20,11 @@ jobs:
 
   run-windows-commands:
     runs-on: windows-latest
+    needs: 
+      - run-shell-command
     steps:
       - name: show current directory using powershell
         run: Get-Location
       - name: show current directory using bash
         shell: bash
         run: pwd
-        
