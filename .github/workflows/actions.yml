@@ -19,6 +19,9 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v1
+      - name: show user payload
+        run: |
+          echo ${{ github.event.client_payload.env }}
       - name: list files
         run: |
           pwd
