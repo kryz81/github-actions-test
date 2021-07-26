@@ -10,7 +10,7 @@ jobs:
       app:
         image: kryz81/posts:latest
         ports:
-          - 3000:3000
+          - 4000:4000
         env:
           PORT: 4000
       db:
@@ -20,4 +20,4 @@ jobs:
     steps:
       - name: Ping app
         run: |
-          curl http://localhost:3000
+          curl http://localhost:4000/posts
