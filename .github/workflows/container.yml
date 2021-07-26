@@ -8,9 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     services:
       app:
-        image: kryz81/myapp:1.4.0
+        image: kryz81/posts:latest
         ports:
           - 3000:3000
+        env:
+          PORT: 4000
       db:
         image: mongo
         ports:
