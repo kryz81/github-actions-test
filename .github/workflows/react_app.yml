@@ -1,8 +1,9 @@
 name: React App
 
 on:
-  - pull_request:
-      branches: [develop]
+  pull_request:
+    branches:
+      - develop
 
 jobs:
   build:
