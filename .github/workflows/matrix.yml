@@ -5,6 +5,11 @@ on:
 
 jobs:
   node-version:
+    strategy:
+      matrix:
+        node_version: [16, 14, 12]
+      fail-fast: true
+      max-parallel: 2
     runs-on: ubuntu-latest
     steps:
       - name: Log node version
@@ -12,6 +17,6 @@ jobs:
       - name: Switch version
         uses: actions/setup-node@v1
         with:
-          node-version: 6
+          node-version: ${{ matrix.node_version }}
       - name: Log node version
         run: node -v
