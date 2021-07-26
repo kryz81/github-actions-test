@@ -33,12 +33,12 @@ jobs:
       - name: Upload test coverage
         uses: actions/upload-artifact@v1
         with:
-          path: coverage
+          path: react_app/coverage
           name: codecoverage
       - name: Build
         run: npm run build
       - name: Upload build
         uses: actions/upload-artifact@v1
         with:
-          path: build
+          path: react_app/build
           name: build
