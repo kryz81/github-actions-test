@@ -6,8 +6,16 @@ on:
 jobs:
   node-docker:
     runs-on: ubuntu-latest
-    container:
-      image: node:16-alpine
+    services:
+      app:
+        image: kryz81/myapp:1.4.0
+        ports:
+          - 3000:3000
+      db:
+        image: mongo:latest-alpine
+        ports:
+          - 27017:27017
     steps:
-      - name: Log node version
-        run: node -v
+      - name: Ping app
+        run: |
+          curl http://localhost:3000
